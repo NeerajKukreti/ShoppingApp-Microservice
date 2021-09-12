@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Shopping.client.Models.Product>
+
+<h1>Products</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+        
+            <th>@Html.DisplayNameFor(model => model.Category)</th>
+        
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+        
+            <th>@Html.DisplayNameFor(model => model.ImageFile)</th>
+       
+            <th>@Html.DisplayNameFor(model => model.Price)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => product.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(model => product.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(model => product.ImageFile)
+            </td>
+            <td>
+                @Html.DisplayFor(model => product.Price)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
