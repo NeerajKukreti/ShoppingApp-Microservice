@@ -22,6 +22,13 @@ namespace Shopping.client
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient("ShoppingAPIClient", client =>
+            {
+                client.BaseAddress = new Uri("http://localhost:8000/"); // local
+                client.BaseAddress = new Uri(Configuration["ShoppingAPIUrl"]); //docker
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+            });
+
             services.AddControllersWithViews();
         }
 

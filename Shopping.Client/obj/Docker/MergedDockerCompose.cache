@@ -1,0 +1,61 @@
+services:
+  shopping.client:
+    build:
+      context: D:\Microservices\AKS\gitrepo\Shopping.Client
+      dockerfile: D:\Microservices\AKS\gitrepo\Shopping.Client\Shopping.client\Dockerfile
+    container_name: shoppingclient
+    depends_on:
+      shopping.api:
+        condition: service_started
+      shopping.db:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ShoppingAPIUrl: http://shoppingapi
+    image: shoppingclient
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8001
+      protocol: tcp
+  shopping.db:
+    container_name: shoppingdb
+    image: mongo
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 27017
+      published: 27017
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: bind
+      source: /site
+      target: /data/db
+      bind:
+        create_host_path: true
+  shoppingapi:
+    build:
+      context: D:\Microservices\AKS\gitrepo\Shopping.Client
+      dockerfile: D:\Microservices\AKS\gitrepo\Shopping.Client\ShoppingAPI\Dockerfile
+    container_name: shoppingapi
+    depends_on:
+      shopping.db:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      Databasesetting:ConnectionString: mongodb://shoppingdb:27017
+    image: shoppingapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8000
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose16466338097312754945_default

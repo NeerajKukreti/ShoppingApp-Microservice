@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Microservices\\AKS\\run-devops\\Shopping.Client\\Shopping.client\\Shopping.client.csproj": {}
+    "D:\\Microservices\\AKS\\gitrepo\\Shopping.Client\\Shopping.client\\Shopping.client.csproj": {}
   },
   "projects": {
-    "D:\\Microservices\\AKS\\run-devops\\Shopping.Client\\Shopping.client\\Shopping.client.csproj": {
+    "D:\\Microservices\\AKS\\gitrepo\\Shopping.Client\\Shopping.client\\Shopping.client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Microservices\\AKS\\run-devops\\Shopping.Client\\Shopping.client\\Shopping.client.csproj",
+        "projectUniqueName": "D:\\Microservices\\AKS\\gitrepo\\Shopping.Client\\Shopping.client\\Shopping.client.csproj",
         "projectName": "Shopping.client",
-        "projectPath": "D:\\Microservices\\AKS\\run-devops\\Shopping.Client\\Shopping.client\\Shopping.client.csproj",
+        "projectPath": "D:\\Microservices\\AKS\\gitrepo\\Shopping.Client\\Shopping.client\\Shopping.client.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Microservices\\AKS\\run-devops\\Shopping.Client\\Shopping.client\\obj\\",
+        "outputPath": "D:\\Microservices\\AKS\\gitrepo\\Shopping.Client\\Shopping.client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -47,6 +47,10 @@
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.11.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
