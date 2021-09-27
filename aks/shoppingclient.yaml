@@ -18,7 +18,7 @@ spec:
         - name: acr-secret
       containers:
       - name: shoppingclient
-        image: acrregistry008.azurecr.io/shoppingclient:v2
+        image: acrregistry008.azurecr.io/shoppingclient:v2  
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
